@@ -5,16 +5,12 @@ return {
        tag = '0.1.8',
        dependencies = {
            'nvim-lua/plenary.nvim',
-           {
-               'nvim-telescope/telescope-fzf-native.nvim',
-               build = 'make'
-           },
-	   "andrew-george/telescope-themes",
+           "andrew-george/telescope-themes",
+	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
        },
        config = function()
            local telescope = require('telescope')
            local actions = require('telescope.actions')
-           
            telescope.setup {
                defaults = {
                    mappings = {
@@ -77,6 +73,7 @@ return {
 
            -- Load extensions
            telescope.load_extension('fzf')
+	   telescope.load_extension('themes')
        end,
    },
 }

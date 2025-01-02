@@ -3,7 +3,7 @@ return {
 	config = function()
 		require("ibl").setup {
 			exclude = { filetypes = { "dashboard" } },
-			indent = { char = "▏" },
+			indent = { char = "▏", tab_char = "▎"},
 			whitespace = { highlight = { "Whitespace" } },
 			scope = { enabled = false },
 		}
