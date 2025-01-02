@@ -7,7 +7,7 @@ return {
            'nvim-lua/plenary.nvim',
            "andrew-george/telescope-themes",
 	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
-       },
+},
        config = function()
            local telescope = require('telescope')
            local actions = require('telescope.actions')
