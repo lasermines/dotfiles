@@ -3,12 +3,13 @@ return {
    {
        "nvim-telescope/telescope.nvim",
        tag = '0.1.8',
-       dependencies = { 
+       dependencies = {
            'nvim-lua/plenary.nvim',
            {
                'nvim-telescope/telescope-fzf-native.nvim',
                build = 'make'
-           }
+           },
+	   "andrew-george/telescope-themes",
        },
        config = function()
            local telescope = require('telescope')
@@ -65,7 +66,12 @@ return {
                        override_generic_sorter = true,
                        override_file_sorter = true,
                        case_mode = "smart_case"
-                   }
+                   },
+		   themes = {
+		      enable_previewer = true,
+		      persist = { enabled = true },
+
+		   }
                }
            }
 
